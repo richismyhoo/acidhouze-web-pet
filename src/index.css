@@ -1,13 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'venryn-lite';
+  src: url(./fonts/VenrynSans-Thin.ttf)
+}
+
+
+@font-face {
+  font-family: 'venryn';
+  src: url(./fonts/VenrynSans-Regular.ttf)
+}
+
+@font-face {
+  font-family: 'venryn-bold';
+  src: url(./fonts/VenrynSans-Bold.ttf)
+}
+
+@font-face {
+  font-family: 'venryn-thin';
+  src: url(./fonts/VenrynSans-Light.ttf)
+}
+
+@font-face {
+  font-family: 'venryn-semibold';
+  src: url(./fonts/VenrynSans-SemiBold.ttf)
+}
+
+html {
+  font-family: 'venryn';
+  margin: 0
+}
+
+* {
+  margin: 0;
 }
