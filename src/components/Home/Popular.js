@@ -1,14 +1,26 @@
 import './Popular.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { increment, decrement } from '../../store/counterAction.js'
+import { useEffect } from 'react'
 
 const Popular = (props) => {
+
+    const dispatch = useDispatch()
+    const count = useSelector((state) => state)
 
     function handleLike(event) {
         if (event.currentTarget.style.color === 'white') {
         event.currentTarget.style.color = 'red'
+        dispatch(increment())
         } else if (event.currentTarget.style.color === 'red') {
             event.currentTarget.style.color = 'white'
+            dispatch(decrement())
         }
     }
+
+    useEffect(() => {
+        props.parentCallback(count)
+    },[count])
 
     return (
         <div className='popular'>

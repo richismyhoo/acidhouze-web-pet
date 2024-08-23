@@ -6,9 +6,11 @@ import Animation from '../components/Home/Animation.js'
 import Banners from '../components/Home/BannersAndCategory.js'
 import Footer from '../components/Footer.js'
 
+
 const Home = () => {
 
     const [scroll, setScroll] = useState(0)
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
         const handleScroll = event => {
@@ -17,10 +19,14 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll)
 
+        console.log(count)
+
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
-    })
+
+        
+    }, [count])
 
     const handleClickScrollTo = () => {
         window.scrollTo({
@@ -29,9 +35,17 @@ const Home = () => {
         })
     }
 
+    const handleCallback = (childData) => {
+        setCount(childData)
+    }
+
+    const handleSendMail = () => {
+        
+    }
+
     return (
     <div className='home-container'>
-        <NavBar />
+        <NavBar count={count}/>
         <div className='head-banner'>
             <div className='banner-content'>
                 <h3>ОФИЦИАЛЬНЫЙ МЕРЧ <br />ОТ БЕЛОЙ ЧУВАШИИ</h3>
@@ -47,7 +61,7 @@ const Home = () => {
             </svg>
         </div>
 
-        <Popular scroll={scroll}/>
+        <Popular scroll={scroll} parentCallback={handleCallback}/>
         <Animation />
         <Banners />
 
@@ -61,7 +75,7 @@ const Home = () => {
                 <div className='mail-form'>
                     <div className='mail-box'>
                     <input type='text' className='mail-form-input' placeholder='Электронная почта'/>
-                    <div className='mail-button clickable'>Получить</div>
+                    <div className='mail-button clickable' onClick={handleSendMail}>Получить</div>
                     </div>
                     <div className='check'>
                     <label className='checkbox-text'>

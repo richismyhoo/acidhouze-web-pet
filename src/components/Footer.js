@@ -38,8 +38,8 @@ const Footer = () => {
                 <div className='acid-info'>
                 © ACIDHOUZE SHOP<br/>ООО «ACIDHOUZE SHOP», ОГРН: 1012000998900, <br/> ИНН: 4414466700, КПП: 766400000
                 </div>
-                <div className='pol-info clickable'>
-                    Политика конфиденциальности
+                <div className='pol-info'>
+                    Сделано для портфолио
                 </div>
                 <div className='payment'>
                     <div className='card'>
